@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .brdr{
+            border: 1px solid black;
+            padding: 20px;
+            text-align: center;
+            margin: 10px;
+        }
+        .container{
+            display: flex;
+        }
+        aside{
+            display: flex;
+            flex-direction: column;
+            width: 200px;
+        }
+        .main{
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+        }
+        .sec{
+            display: flex;
+            height: 300px;
+            
+        }
+        .footer{
+            display: flex;
+            flex-direction: column;
+          
+        }
+        #section1{
+            flex-grow: 2;
+        }
+        #section2{
+            flex-grow: 2;
+        }
+       #head{
+        height: 50px;
+       }
+       #art{
+        height: 50px;
+       }
+       #sec3{
+        height: 50px;
+       }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+            <aside class="brdr" id="aside">Aside</aside>         
+           <div class="main">
+            <header class="brdr" id="head">header</header>
+            <div class="sec">
+                <section class="brdr" id="section1">Section</section>
+            <section class="brdr" id="section2">Section</section>
+            </div>
+
+
+           </div>
+           </div>
+           <div class="footer">
+            <article class="brdr" id="art">Article</article>
+            <section class="brdr" id="sec3">Section</section>
+           </div>
+      
+
+</body>
+
+</html>

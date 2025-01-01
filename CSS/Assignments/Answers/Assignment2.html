@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flex</title>
+    <style>
+        .brdr
+        {
+            border: 1px solid black;
+            padding: 10px;
+            margin: 10px;
+            text-align: center;
+        }
+        .parent
+        {
+            display: flex;
+            
+        }
+        #child
+        {
+            display: flex;
+        }
+        .container
+        {
+            width: 40%;
+            margin: 0 auto;
+        }
+        main{
+            flex-grow: 2;
+        }
+        main #child section
+        {
+            flex-grow: 3;
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="container">
+        <div class="parent">
+            <aside class="brdr"> Aside</aside>
+            <main class="brdr">
+                <header class="brdr">Header</header>
+                <section id="child">
+                    <section class="brdr">Section</section>
+                    <section class="brdr">Section</section>
+                </section>
+            </main>
+        </div>
+        <article class="brdr">Article</article>
+        <section class="brdr">Footer</section>
+    </div>
+</body>
+</html>

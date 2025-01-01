@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Average Marks and Grade</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        .container {
+            width: 50%;
+            margin: 50px auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        label {
+            font-weight: bold;
+            color: #555;
+        }
+
+        input {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        button {
+            padding: 10px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        .result {
+            margin-top: 20px;
+            font-size: 18px;
+            font-weight: bold;
+            color: #333;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Average Marks Calculator</h1>
+        <form id="marksForm">
+            <label for="marks">Enter Marks (comma-separated):</label>
+            <input type="text" id="marks" placeholder="e.g., 85, 90, 78, 92">
+            <button type="submit">Calculate</button>
+        </form>
+        <div id="result" class="result"></div>
+    </div>
+    <script>
+        document.getElementById("marksForm").addEventListener("submit", function (e) {
+            e.preventDefault();
+
+            const marksInput = document.getElementById("marks").value;
+            const marksArray = marksInput.split(",").map(Number).filter(n => !isNaN(n));
+            if (marksArray.length === 0) {
+                displayResult("Please enter valid marks!");
+                return;
+            }
+
+            const totalMarks = marksArray.reduce((sum, mark) => sum + mark, 0);
+            const averageMarks = totalMarks / marksArray.length;
+            const grade = calculateGrade(averageMarks);
+
+            displayResult(`Average Marks: ${averageMarks.toFixed(2)}<br>Grade: ${grade}`);
+        });
+
+        function calculateGrade(average) {
+            if (average < 60) return "F";
+            if (average < 70) return "D";
+            if (average < 80) return "C";
+            if (average < 90) return "B";
+            return "A";
+        }
+
+        function displayResult(message) {
+            document.getElementById("result").innerHTML = message;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flex Demo</title>
+    <style>
+        .brdr{
+            border: 0.7px solid black;
+            padding: 10px;
+        }
+        article{
+            background-color: rgb(175, 186, 297);
+        }
+        #main{
+            display: flex;
+        }
+        #main nav{
+            flex-grow: 3;
+        }
+        #main main{
+            flex-grow: 6;
+        }
+    </style>
+</head>
+<body>
+    <header class="brdr" style="background-color: lawngreen;">
+        &lt;header&gt;</header>
+        <section id="main">
+            <nav class="brdr" style="background-color: rgb(240, 200, 240);">
+                &lt;nav&gt;
+            </nav>
+            <main class="brdr" style="background-color: rgb(243, 243, 189);">&lt;main&gt
+                <article class="brdr">&lt;article&gt</article>
+                <article class="brdr">&lt;article&gt</article>
+                <article class="brdr">&lt;article&gt</article>
+            </main>
+        </section>
+        <footer class="brdr" style="background-color: rgb(170, 166, 185);">
+            &ltfooter&gt;
+        </footer>
+</body>
+</html>

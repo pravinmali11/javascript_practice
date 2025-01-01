@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Data</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f4f4f4;
+        }
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        tr:hover {
+            background-color: #f1f1f1;
+        }
+    </style>
+</head>
+<body>
+    <h1>Employee Table</h1>
+    <div id="employeeTable"></div>
+
+    <script>
+        const employees = [
+            { "id": 1, "name": "Pravin", "department": "Software Developer", "salary": 80000 },
+            { "id": 2, "name": "Divyani", "department": "Software Developer", "salary": 90000 },
+            { "id": 3, "name": "Hritik",  "department": "Software Developer", "salary": 65000 },
+            { "id": 4, "name": "Sayali", "department": "Software Developer", "salary": 70000 },
+            { "id" : 5, "name" : "Lavemesh","department" : "Software Developer","salary": 70000 }
+        ];
+        function renderEmployeeTable(data) {
+    let tableHTML = `
+            <table>
+            <thead>
+                <tr>
+                    <th>ID</th><th>Name</th><th>Department</th><th>Salary</th>
+                </tr>
+            </thead>
+            <tbody>`;
+
+    for (const employee of data) {
+        tableHTML += ` <tr><td>${employee.id}</td><td>${employee.name}</td><td>${employee.department}</td><td>${employee.salary}</td></tr>`;
+    }
+    tableHTML += ` </tbody></table>`;
+    document.getElementById('employeeTable').innerHTML = tableHTML;
+}
+renderEmployeeTable(employees);
+    </script>
+</body>
+</html>

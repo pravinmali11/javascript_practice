@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        header{
+            display: flex;
+            justify-content: space-between;
+            padding:10%;
+            align-items: center;
+            background-size: cover;
+            height: 40vh;
+            color: white;
+            text-align: center;
+        }
+        #info{
+            display: flex;
+            padding: 10px;
+        }
+        #info #info_img{
+            background: url(../html/image/Home.jpg);
+            background-position: center;
+            background-size: cover;
+
+        }
+        #info #info_text{
+            width: 600px;
+        }
+        @media (max-width:550px){
+            #info{
+                flex-direction: column;
+            }
+            #info #info_img{
+                order: 1;
+                width: 100%;
+            }
+            #info #info_text{
+                order: 2;
+                width: 100%;
+                font-size: 0.7rem;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <img src="../html/image/Home.jpg" height="50%" width="50">
+        <nav>
+            <a href="#">Home</a>
+            <a href="#">About</a>
+            <a href="#">Contact</a>
+        </nav>        
+    </header>
+    <main>
+        <section id="Banner">
+            <h1>Welcome User</h1>
+        </section>
+        <section id="info">
+            <div id="info.image"></div>
+            <div id="info.text"></div>
+        </section>
+    </main>
+</body>
+</html>

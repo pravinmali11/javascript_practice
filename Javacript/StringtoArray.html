@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>String to Array</title>
+</head>
+<body>
+    <h2>Convert String to Array</h2>
+    <input type="text" id="stringInput" placeholder="Enter a string">
+    <button onclick="convertToArray()">Convert</button>
+    <p id="arrayResult"></p>
+
+    <script>
+        function stringToArray(str) {
+            return str.split(' ');
+        }
+
+        function convertToArray() {
+            const input = document.getElementById('stringInput').value;
+            const result = stringToArray(input);
+            document.getElementById('arrayResult').innerText = JSON.stringify(result);
+        }
+    </script>
+</body>
+</html>

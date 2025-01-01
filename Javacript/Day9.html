@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 09</title>
+</head>
+<body>
+    <button id="btn">Add elm</button>
+    <div id="box"></div>
+    <p>
+        <input type="text" placeholder="task" id="task">
+    </p>
+    <button id="add">Add task</button>
+    <button id="remove"> Remove</button>
+    <ul id="lst">
+
+    </ul>
+    <script>
+        var addbtn=document.getElementById('add');
+        var removebtn = document.getElementById('remove');
+        addbtn.addEventListener('click',()=>{
+            var lst=document.getElementById('lst');
+            var li = document.createElement('li');
+            var tsk=document.getElementById('task').value;
+            console.log(tsk);
+            li.append(tsk);
+            lst.append(li);
+
+        })
+        removebtn.addEventListener('click', () => {
+            var lst = document.getElementById('lst');
+            if (lst.lastChild) { 
+                lst.lastChild.remove();
+            }
+        });
+
+        var btn=document.getElementById('btn');
+        var box=document.getElementById('box');
+        btn.addEventListener('click',function(){
+            var p=document.createElement('p');
+            var txt=document.createTextNode("new para elem");
+            p.append(txt);
+            box.appendChild(p);
+            console.log(p);
+            console.log(txt);
+
+        });
+    </script>
+</body>
+</html>

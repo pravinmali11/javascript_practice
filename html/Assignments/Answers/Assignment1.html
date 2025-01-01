@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text Arrangement</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+
+        .container {
+            border: 1px solid black;
+            padding: 20px;
+            background-color: white;
+            width: 40%;
+            margin: auto;
+        }
+
+        h1 {
+            font-size: 36px;
+        }
+
+        .colored-text {
+            color: red;
+        }
+
+        .colored-text:nth-child(2) {
+            color: blue;
+        }
+
+        .colored-text:nth-child(3) {
+            color: green;
+        }
+
+        .large-text {
+            font-size: 40px;
+        }
+
+        blockquote {
+            border-left: 4px solid #ccc;
+            padding-left: 10px;
+            margin-left: 0;
+            color: #555;
+        }
+
+        .emphasize {
+            font-style: italic;
+        }
+
+        .bold {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <p>To begin, we can change the</p>
+        <h1>header size</h1>
+        <p>and <span class="colored-text">color</span> of <span class="colored-text">letters</span> seen on the screen. The 
+            <span class="large-text">font size</span> can be changed as well, and actually gives more choices.</p>
+        
+            We can also change the appearance of words on the screen. This shows some differing word types in a blocked quote.
+        
+        <p>Now is the <span class="emphasize">time</span> for all good <span class="bold">people to come</span> to the <span class="emphasize">aid</span> of their country.</p>
+        <p>That was also an example of a nested command.</p>
+    </div>
+
+</body>
+</html>

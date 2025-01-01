@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment 3</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: 1fr 2fr 2fr 2fr;
+            grid-template-areas: 
+                'header header header header'
+                'sidebar main main main'
+                'sidebar content1 content2 content3'
+                'sidebar footer footer footer';
+            grid-template-rows: auto 1fr 1fr auto;
+            grid-gap: 10px;
+            padding: 10px;
+            height: 95vh;
+        }
+
+        .brdr {
+            border: 1px solid black;
+            padding: 20px;
+            text-align: center;
+        }
+
+        #header {
+            grid-area: header;
+            background-color: #a0e7e5;
+        }
+
+        #sidebar {
+            grid-area: sidebar;
+            background-color: #72efdd;
+        }
+
+        #main {
+            grid-area: main;
+            background-color: #b4f8c8;
+        }
+
+        #content1 {
+            grid-area: content1;
+            background-color: #ccff33;
+        }
+
+        #content2 {
+            grid-area: content2;
+            background-color: #ccff99;
+        }
+
+        #content3 {
+            grid-area: content3;
+            background-color: #ccff66;
+        }
+
+        #footer {
+            grid-area: footer;
+            background-color: #89cff0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="brdr" id="header">Header</header>
+        <nav class="brdr" id="sidebar">Sidebar</nav>
+        <main class="brdr" id="main">Main Content</main>
+        <section class="brdr" id="content1">Content 1</section>
+        <section class="brdr" id="content2">Content 2</section>
+        <section class="brdr" id="content3">Content 3</section>
+        <footer class="brdr" id="footer">Footer</footer>
+    </div>
+</body>
+</html>

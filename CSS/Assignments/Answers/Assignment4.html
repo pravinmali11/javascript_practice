@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment 4</title>
+    <style>
+        .grid-container {
+            display: grid;
+            grid-template-areas: 
+                'header header header'
+                'main empty sidebar'
+                'footer footer footer';
+            grid-gap: 10px;
+            padding: 10px;
+            height: 95vh;
+        }
+        
+        .grid-container > div {
+            padding: 20px;
+            font-size: 20px;
+            text-align: center;
+        }
+
+        .header {
+            grid-area: header;
+            background-color: orange;
+        }
+
+        .main {
+            grid-area: main;
+            background-color: lightblue;
+        }
+
+        .empty {
+            grid-area: empty;
+            background-color: white;
+        }
+
+        .sidebar {
+            grid-area: sidebar;
+            background-color: red;
+        }
+
+        .footer {
+            grid-area: footer;
+            background-color: green;
+        }
+    </style>
+</head>
+<body>
+
+<div class="grid-container">
+    <div class="header">Header</div>
+    <div class="main">Main</div>  
+    <div class="empty">Empty</div>
+    <div class="sidebar">Sidebar</div>
+    <div class="footer">Footer</div>
+</div>
+
+</body>
+</html>

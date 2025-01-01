@@ -1,0 +1,145 @@
+/* styles.css */
+
+/* Reset basic styles */
+body, h1, h2, p, table, th, td {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+.resume-container {
+    width: 80%;
+    max-width: 900px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #ffffff;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+header h1 {
+    font-size: 2.5em;
+    color: #007BFF; /* Blue color for name */
+}
+
+header .title {
+    font-size: 1.2em;
+    color: #555;
+    font-weight: bold;
+}
+
+header .contact-info {
+    margin-top: 10px;
+    font-size: 0.9em;
+    color: #666;
+}
+
+section {
+    margin-bottom: 20px;
+}
+
+h2 {
+    font-size: 1.8em;
+    color: #007BFF; /* Consistent blue for headings */
+    border-bottom: 2px solid #007BFF;
+    margin-bottom: 15px;
+    padding-bottom: 5px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    background-color: #007BFF; /* Blue color for table headers */
+    color: #fff;
+}
+
+tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+tr:hover {
+    background-color: #e9f5ff;
+    transition: background-color 0.3s ease;
+}
+
+.skills table {
+    text-align: center;
+}
+
+.skills td {
+    background-color: #fff; /* White background for skills */
+    color: #555;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    margin: 5px;
+}
+
+.skills td:hover {
+    background-color: #e9f5ff;
+    transition: background-color 0.3s ease;
+}
+
+/* Additional CSS for Projects, Certificates, and Hobbies Sections */
+.projects ul, .certificates ul, .hobbies ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.projects li, .certificates li, .hobbies li {
+    margin-bottom: 15px;
+    padding: 10px;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+}
+
+.projects li strong, .certificates li strong {
+    color: #007BFF;
+}
+
+.hobbies li {
+    padding-left: 20px; /* Adding space for bullet points */
+    line-height: 1.5; /* Adding space between lines */
+}
+
+@media (max-width: 600px) {
+    .resume-container {
+        width: 90%;
+        padding: 15px;
+    }
+
+    header h1 {
+        font-size: 1.8em;
+    }
+
+    h2 {
+        font-size: 1.4em;
+    }
+
+    table, th, td {
+        font-size: 0.9em;
+    }
+}

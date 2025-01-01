@@ -1,0 +1,5 @@
+pop and shift uses the the delete the element
+Add element on array push and unshift push used to add element to start, unshift used to add element on end.
+
+Task-:
+Employee json print the table format using html and css.

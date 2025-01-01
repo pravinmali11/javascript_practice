@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product List</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #f4f4f4;
+        }
+
+        .container {
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            width: 90%;
+            max-width: 800px;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        input[type="number"], select {
+            padding: 8px;
+            margin: 5px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        button {
+            padding: 10px;
+            background: #5cb85c;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #4cae4c;
+        }
+
+        table {
+            width: 100%;
+            margin-top: 20px;
+            border-collapse: collapse;
+        }
+
+        table, th, td {
+            border: 1px solid #ddd;
+            text-align: center;
+        }
+
+        th, td {
+            padding: 10px;
+        }
+
+        .total-row {
+            font-weight: bold;
+            background-color: #f9f9f9;
+        }
+
+        /* Hide the Product ID column */
+        th:nth-child(1), td:nth-child(1) {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Product List</h1>
+        <div>
+            <select id="pname" onchange="updatePriceAndQuantity()">
+                <option value="" data-price="0">Select a Product</option>
+                <option value="HP" data-price="80000">HP</option>
+                <option value="DELL" data-price="70000">DELL</option>
+                <option value="Lenovo" data-price="65000">Lenovo</option>
+            </select>
+            <input type="number" id="price" placeholder="Price" readonly />
+            <input type="number" id="quantity" placeholder="Quantity" />
+            <button onclick="addProduct()">Add Product</button>
+        </div>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Product ID</th>
+                    <th>Product Name</th>
+                    <th>Price</th>
+                    <th>Quantity</th>
+                    <th>Total</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody id="productTable">
+                <!-- Rows will be dynamically added here -->
+            </tbody>
+            <tfoot>
+                <tr class="total-row">
+                    <td colspan="4">Total</td>
+                    <td id="grandTotal"></td>
+                    <td></td>
+                </tr>
+            </tfoot>
+        </table>
+    </div>
+
+    <script>
+        let productList = [];
+        //let grandTotal = 0;
+
+        function updatePriceAndQuantity() {
+            const pnameSelect = document.getElementById("pname");
+            const selectedOption = pnameSelect.options[pnameSelect.selectedIndex];
+            const price = parseFloat(selectedOption.getAttribute("data-price"));
+
+            document.getElementById("price").value = price || 0;
+            document.getElementById("quantity").value = ""; // Clear quantity
+        }
+
+        function addProduct() {
+            const pname = document.getElementById("pname").value;
+            const price = parseFloat(document.getElementById("price").value);
+            const quantity = parseInt(document.getElementById("quantity").value);
+
+            if (!pname || price <= 0 || quantity <= 0) {
+                alert("Please fill valid product details.");
+                return;
+            }
+
+            const total = price * quantity;
+            const product = { pname, price, quantity, total };
+            productList.push(product);
+            grandTotal += total;
+
+            updateTable();
+            clearInputs();
+        }
+
+        function updateTable() {
+            const table = document.getElementById("productTable");
+            table.innerHTML = "";
+
+            productList.forEach((product, index) => {
+                const row = `<tr>
+                    <td>${index + 1}</td> <!-- Hidden column -->
+                    <td>${product.pname}</td>
+                    <td>${product.price}</td>
+                    <td>${product.quantity}</td>
+                    <td>${product.total}</td>
+                    <td><button onclick="deleteProduct(${index})">Delete</button></td>
+                </tr>`;
+                table.innerHTML += row;
+            });
+
+            //document.getElementById("grandTotal").innerText = grandTotal;
+        }
+
+        function deleteProduct(index) {
+            const product = productList[index];
+            grandTotal -= product.total;
+            productList.splice(index, 1);
+            updateTable();
+        }
+
+        function clearInputs() {
+            document.getElementById("pname").value = "";
+            document.getElementById("price").value = "";
+            document.getElementById("quantity").value = "";
+        }
+    </script>
+</body>
+</html>

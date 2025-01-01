@@ -1,0 +1,103 @@
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dynamic Div Add/Remove</title>
+    <style>
+      .data-div {
+        display: flex;
+        gap: 10px;
+        margin-bottom: 10px;
+      }
+      input {
+        width: 100px;
+      }
+      select {
+        width: 120px;
+      }
+      button {
+        padding: 5px 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="container"></div>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const container = document.getElementById("container"),
+          options = [
+            { value: "option1", text: "Select", price: 0 },
+            { value: "option2", text: "HP", price: 80000 },
+            { value: "option3", text: "Dell", price: 70000 },
+            { value: "option4", text: "Lenovo", price: 40000 },
+          ];
+
+        const createInput = (type, placeholder, value = 0, readOnly = false) => {
+          const input = document.createElement("input");
+          input.type = type;
+          input.placeholder = placeholder;
+          input.value = value;
+          input.readOnly = readOnly;
+          return input;
+        };
+
+        const createButton = (text, onClick) => {
+          const button = document.createElement("button");
+          button.textContent = text;
+          button.addEventListener("click", onClick);
+          return button;
+        };
+
+        const updateTotal = (priceInput, quantityInput, totalInput) => {
+          totalInput.value = (
+            (parseFloat(priceInput.value) || 0) * (parseInt(quantityInput.value) || 0)
+          ).toFixed(2);
+        };
+
+        const createRow = () => {
+          const row = document.createElement("div");
+          row.classList.add("data-div");
+
+          const select = document.createElement("select");
+          select.classList.add("choices");
+          options.forEach(({ value, text, price }) => {
+            const opt = document.createElement("option");
+            opt.value = value;
+            opt.textContent = text;
+            opt.dataset.price = price;
+            select.appendChild(opt);
+          });
+
+          const priceInput = createInput("number", "Price", 0, true),
+            quantityInput = createInput("number", "Quantity", 0),
+            totalInput = createInput("number", "Total", 0, true);
+
+          select.addEventListener("change", () => {
+            priceInput.value = parseFloat(select.options[select.selectedIndex].dataset.price) || 0;
+            updateTotal(priceInput, quantityInput, totalInput);
+          });
+          quantityInput.addEventListener("input", () => updateTotal(priceInput, quantityInput, totalInput));
+
+          row.append(
+            createButton("-", () => row.remove()),
+            select,
+            priceInput,
+            quantityInput,
+            totalInput,
+            createButton("+", createRow)
+          );
+          container.appendChild(row);
+        };
+
+        createRow();
+      });
+    </script>
+  </body>
+</html>

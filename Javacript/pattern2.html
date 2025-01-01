@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pyramid Pattern</title>
+</head>
+<body>
+    <script>
+        var m = 1;
+        for (let i = 1; i <= 5; i++) {
+            // Loop for spaces
+            for (let k = 1; k <= 5 - i; k++) {
+                document.write("&nbsp;&nbsp;"); // Using spaces instead of &nbsp;
+            }
+            // Loop for asterisks
+            for (let j = 1; j <= m; j++) {
+                document.write("*");
+            }
+            document.write("<br/>");
+            m = m + 2; // Increment the number of asterisks
+        }
+    </script>
+</body>
+</html>

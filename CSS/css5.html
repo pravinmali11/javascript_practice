@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Layout</title>
+    <style>
+        .brdr{
+            border: 1px solid black;
+            padding: 10px;
+        }
+        .container{
+            padding: 10px;
+            display: grid;
+            grid-template-areas: 
+            'logo banr banr banr'
+            'bar bar bar'
+            'left cntr cntr rt'
+            'left cntrleft cntrrt rt'
+            'left mod mod rt'
+            'ftr ftr ftr ftr';
+        }
+        #logo{
+            grid-area: logo;
+        }
+        #banr{
+            grid-area: banr;
+        }
+        #bar{
+            grid-area: bar;
+        }
+        #cntr{
+            grid-area: cntr;
+        }
+        #cntr-left{
+            grid-area: cntr-left;
+        }
+        #cntr-right{
+            grid-area: cntr-right;
+        }
+        #mod{
+            grid-area: mod;
+        }
+        #ftr{
+            grid-area: banr;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <nav class="brdr" id="logo">Header logo</nav>
+        <header class="brdr" id="banr">Header Banner</header>
+        <header class="brdr" id="bar">Header Bar</header>
+        <div class="brdr" id="left">Left Bar</div>
+        <div class="brdr" id="cntr">Center-Center Block</div>
+        <div class="brdr" id="cntr-left">Center-left Block</div>
+        <div class="brdr" id="cntr-right">Center-Right Block</div>
+        <div class="brdr" id="mod">Module Content</div>
+        <div class="brdr" id="ftr">Footer Bar</div>
+        <div class=""></div>
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,4 @@
+
+Write a js print table of 2 in table format
+Write a js to find area of circle rectangle
+Write the js to find days of months

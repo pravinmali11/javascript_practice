@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rivision</title>
+    <style>
+        table, td, th{
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+        table{
+            border-collapse: collapse;
+            width: 50%;
+        }
+        th, td{
+            padding: 15px;
+        }
+    </style>
+      <Table id="Table"></Table>
+</head>
+<body>
+    <p id="demo"></p>
+    <div>
+        <input type="number" id="input">
+        <button onclick="areaOfCircle()"> Click find area of circle</button>
+        <h1 id="area" style="margin: top 20px;"></h1>
+        </div>
+
+        <script>
+        function areaOfCircle(){
+        let value = parseFloat(document.getElementById("input").value);
+        let area =Math.PI*Math.pow(value,2);
+        document.getElementById("area").innerHTML = `The Area of Circle Is:${area.toFixed(2)}`
+        }
+        let tableContent = '';
+      for (let i = 1; i <= 10; i++) {
+      tableContent += `<tr><td>2</td><td>x</td><td>${i}</td><td>=</td><td>${2 * i}</td></tr>`;
+}
+document.getElementById("Table").innerHTML = tableContent;
+
+let text1 = "John";
+let text2 = "Doe";
+let text3 = text1 + " " + text2;
+document.getElementById("demo").innerHTML = text3;
+
+let text4="Welcome to";
+text4+=" Javascript";
+document.getElementById("demo").innerHTML = text4;
+
+        </script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flex</title>
+    <style>
+        .container{
+            background-color: aquamarine;
+            padding: 10px;
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            height: 400px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        .box{
+            background-color: brown;
+            padding: 10px;
+            border: 1px solid white;       
+        }
+        #d1{
+            /* align-self: flex-start; */
+            flex-grow: 3;
+            order: 6;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box" id="d1">1</div>
+        <div class="box" id="d2">2</div>
+        <div class="box" id="d3">3</div>
+        <div class="box" id="d4">4</div>
+        <div class="box" id="d5">5</div>
+        <div class="box" id="d6">6</div>
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Current Date Formats</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        p {
+            font-size: 18px;
+            margin: 10px 0;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Current Date in Different Formats</h1>
+        <p id="mmddyyyy-dash"></p>
+        <p id="mmddyyyy-slash"></p>
+        <p id="ddmmyyyy-dash"></p>
+        <p id="ddmmyyyy-slash"></p>
+    </div>
+
+    <script>
+
+        function getCurrentDate() {
+            const today = new Date();
+            const day = String(today.getDate()).padStart(2, '0'); 
+            const month = String(today.getMonth() + 1).padStart(2, '0'); 
+            const year = today.getFullYear();
+            const mmddyyyyDash = `${month}-${day}-${year}`;
+            const mmddyyyySlash = `${month}/${day}/${year}`;
+            const ddmmyyyyDash = `${day}-${month}-${year}`;
+            const ddmmyyyySlash = `${day}/${month}/${year}`;
+            document.getElementById("mmddyyyy-dash").innerText = `mm-dd-yyyy: ${mmddyyyyDash}`;
+            document.getElementById("mmddyyyy-slash").innerText = `mm/dd/yyyy: ${mmddyyyySlash}`;
+            document.getElementById("ddmmyyyy-dash").innerText = `dd-mm-yyyy: ${ddmmyyyyDash}`;
+            document.getElementById("ddmmyyyy-slash").innerText = `dd/mm/yyyy: ${ddmmyyyySlash}`;
+        }
+        getCurrentDate();
+    </script>
+</body>
+</html>

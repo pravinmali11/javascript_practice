@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Welcome user</h1>
+    <div class=""box>
+    <h1>I am inside the DIV</h1>
+    <p class="box">Para elem</p>
+</div>
+<p class="box">Para elem outside the DIV</p>
+<script>
+    var h=document.getElementsByTagName('h1');
+    console.log(h.length);
+    for(i=0;i<h.length;i++)
+{
+    h[i].style.color='red';
+}
+var box=document.getElementsByClassName('box');
+</script>
+</body>
+</html>
